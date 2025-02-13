@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4u</title>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4e1d1;
+            color: #3a3a3a;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-spacing: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        td {
+            background-color: #f9d5d3;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        td:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+
+        td::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        td:hover::before {
+            opacity: 1;
+        }
+
+        h1 {
+            color: #7a4a3c;
+            font-size: 2.5em;
+            animation: float 3s infinite;
+        }
+
+        .emoji {
+            font-size: 4em;
+            display: block;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        a {
+            text-decoration: none;
+            color: #7a5e4a;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #7a5e4a;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    
+    <table>
+        <<tr>
+    <td>
+        <a href="first-date.html" style="display: block; width: 100%; height: 100%; text-decoration: none; color: inherit;">
+            <span class="emoji">❤️</span>
+            <h2>Some Pics</h2>
+        </a>
+    </td>
+    
+    <td>
+        <a href="letters.html" style="display: block; width: 100%; height: 100%; text-decoration: none; color: inherit;">
+            <span class="emoji">💌</span>
+            <h2>Letters</h2>
+        </a>
+    </td>
+</tr>
+
+    </table>
+</body>
+</html>
